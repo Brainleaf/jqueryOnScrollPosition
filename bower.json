@@ -1,0 +1,22 @@
+{
+  "name": "jqueryPositionOnScroll",
+  "version": "0.4.0",
+  "authors": [
+    "BRAINLEAF OpenSource Factory"
+  ],
+  "description": "It detects if a DOM element is inside the viewport height on window scroll",
+  "main": "dist/jquery.onScrollPosition.js",
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "plugin",
+    "scroll",
+    "element",
+    "position",
+    "on-scroll",
+    "visible",
+    "scroll"
+  ],
+  "license": "MIT",
+  "homepage": "http://factory.brainleaf.eu/jqueryOnScrollPosition"
+}
