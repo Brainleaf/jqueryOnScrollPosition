@@ -1,0 +1,112 @@
+/* =========================================================================
+ DEMO CSS STYLE 
+ --------------
+ This css style is for demo only, it's not nedeed by plugin
+============================================================================ */
+
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+
+h1 {
+    color: #eabf0a;
+    font-size: 2em;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #eabf0a;
+    font-weight: normal;
+}
+
+pre {
+    display: block;
+    padding: 40px;
+    background: #333;
+    color: #eabf0a;
+    font-weight: bold;
+}
+
+nav {
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a {
+    text-decoration: none;
+    background: #eabf0a;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+.code-comment {
+    font-style: italic;
+    color: #ccc;
+    font-weight: normal;
+}
+
+.wrapper {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.element {
+    height: 500px;
+    padding: 50px;
+    font-size: 1.3em;
+}
+
+#first {
+    background-color: #ccc;
+}
+
+#second {
+    background-color: #999;
+}
+
+#third {
+    background-color: #555;
+    color: #fff;
+}
+
+#spacer {
+    background-color: #efefef;
+}
+
+.message {
+    display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px 0;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+}
+
+.message.active {
+    display: block;
+}
+
+#topMessageBar {
+    top: 0;
+    bottom: auto;
+}
+
+#middleMessageBar {
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+#bottomMessageBar {
+    top: auto;
+    bottom: 0;
+}

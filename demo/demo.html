@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery onScrollPosition DEMO</title>        <link href="demo.css" rel="stylesheet">
+	</head>
+	<body>
+        
+        <div id="topMessageBar" class="message">
+            Element <strong>'#first'</strong> is visible on Screen!<br>
+            <small>Handled using <strong>callbackOnTrue</strong> and <strong>callbackOnFalse</strong></small>
+        </div>
+        
+        <div id="middleMessageBar" class="message">
+            Element <strong>'#second'</strong> is visible on Screen!<br>
+            <small>Handled using <strong>callbackOnTrue</strong> and <strong>callbackOnFalse</strong></small>
+        </div>
+        
+        <div id="bottomMessageBar" class="message">
+            Element <strong>'#third'</strong> is visible on Screen!<br>
+            <small>Handled using <strong>callbackOnScroll</strong></small>
+        </div>
+        
+        
+        
+        <div class="wrapper">
+            <h1>jQuery onScrollPosition DEMO</h1>            <p>
+                This is a demo-page for <strong>onScrollPosition</strong> jQuery Plugin<br>
+                See below the demo gray elements the code used on this example.
+            </p>
+            <div id="first" class="element">element: <strong>#first</strong></div>
+            <div id="second" class="element">element: <strong>#second</strong></div>
+            <div id="third" class="element">element: <strong>#third</strong></div>
+            <div id="spacer" class="element">element: <strong>#spacer</strong><br>
+                This element is only a spacer and is nedeed only to scroll #third element out the viewport.<br>
+                Continue to scroll down to see example code.
+            </div>
+            <h2>JAVASCRIPT CODE</h2>
+            <code>
+            <pre>
+$(function() {
+    
+    <span class="code-comment">
+    // FIRST element
+    // ===================================
+    </span>
+    $("#first").onScrollPosition({
+        activeOnStart: false, <span class="code-comment">// prevent callbacks execution before window scroll</span>
+        callbackOnTrue: function(data) {
+            if (! $('#topMessageBar').hasClass('active')) {
+                $('#topMessageBar').addClass('active');
+            }
+            if (data.scrollTop === 0) {
+                $('#topMessageBar').removeClass('active');
+            }
+        },
+        callbackOnFalse: function() {
+            if ($('#topMessageBar').hasClass('active')) {
+                $('#topMessageBar').removeClass('active');
+            }
+        }
+    });
+    
+    <span class="code-comment">
+    // SECOND element
+    // ===================================
+    </span>
+    $("#second").onScrollPosition({
+        callbackOnTrue: function() {
+            if (! $('#middleMessageBar').hasClass('active')) {
+                $('#middleMessageBar').addClass('active');
+            }
+        },
+        callbackOnFalse: function() {
+            if ($('#middleMessageBar').hasClass('active')) {
+                $('#middleMessageBar').removeClass('active');
+            }
+        }
+    });
+    
+    <span class="code-comment">
+    // THIRD element
+    // ===================================
+    </span>
+    $("#third").onScrollPosition({
+        callbackOnScroll: function(data) {
+            if( data.isOnScreen === true ) {
+                if (! $('#bottomMessageBar').hasClass('active')) {
+                    $('#bottomMessageBar').addClass('active');
+                }
+            }else{
+                if ($('#bottomMessageBar').hasClass('active')) {
+                    $('#bottomMessageBar').removeClass('active');
+                }
+            }
+
+        }
+    });
+
+});
+            </pre>
+            </code>
+        </div>
+                
+        <!-- jQuery and jQueryOnScrollPosition -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="../dist/jquery.onScrollPosition.js"></script>
+        
+        <script>
+			$(function() {
+                
+				$("#first").onScrollPosition({
+                    activeOnStart: false,
+                    callbackOnTrue: function(data) {
+                        if (! $('#topMessageBar').hasClass('active')) {
+                            $('#topMessageBar').addClass('active');
+                        }
+                        if (data.scrollTop === 0) {
+                            $('#topMessageBar').removeClass('active');
+                        }
+                    },
+                    callbackOnFalse: function() {
+                        if ($('#topMessageBar').hasClass('active')) {
+                            $('#topMessageBar').removeClass('active');
+                        }
+                    }
+				});
+                
+                $("#second").onScrollPosition({
+                    callbackOnTrue: function() {
+                        if (! $('#middleMessageBar').hasClass('active')) {
+                            $('#middleMessageBar').addClass('active');
+                        }
+                    },
+                    callbackOnFalse: function() {
+                        if ($('#middleMessageBar').hasClass('active')) {
+                            $('#middleMessageBar').removeClass('active');
+                        }
+                    }
+				});
+                
+                $("#third").onScrollPosition({
+                    callbackOnScroll: function(data) {
+                        if( data.isOnScreen === true ) {
+                            if (! $('#bottomMessageBar').hasClass('active')) {
+                                $('#bottomMessageBar').addClass('active');
+                            }
+                        }else{
+                            if ($('#bottomMessageBar').hasClass('active')) {
+                                $('#bottomMessageBar').removeClass('active');
+                            }
+                        }
+                        
+                    }
+				});
+                
+			});
+		</script>
+                
+	</body>
+</html>
